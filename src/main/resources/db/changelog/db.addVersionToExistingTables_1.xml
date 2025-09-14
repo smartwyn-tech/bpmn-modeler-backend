@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+         
+		<changeSet author="fastCode, Inc" id="model_history100">
+	    <preConditions onFail="MARK_RAN">
+        	<tableExists tableName="model_history" schemaName="modeler"/>
+        </preConditions>
+	    <addColumn tableName="model_history">
+	    	<column name="versiono" type="BIGINT" defaultValue="0">
+	      		<constraints nullable="false"/>
+			</column>
+	   	</addColumn>
+	</changeSet>
+	<changeSet author="fastCode, Inc" id="model101">
+	    <preConditions onFail="MARK_RAN">
+        	<tableExists tableName="model" schemaName="modeler"/>
+        </preConditions>
+	    <addColumn tableName="model">
+	    	<column name="versiono" type="BIGINT" defaultValue="0">
+	      		<constraints nullable="false"/>
+			</column>
+	   	</addColumn>
+	</changeSet>
+	<changeSet author="fastCode, Inc" id="model_relation102">
+	    <preConditions onFail="MARK_RAN">
+        	<tableExists tableName="model_relation" schemaName="modeler"/>
+        </preConditions>
+	    <addColumn tableName="model_relation">
+	    	<column name="versiono" type="BIGINT" defaultValue="0">
+	      		<constraints nullable="false"/>
+			</column>
+	   	</addColumn>
+	</changeSet>
+         
+</databaseChangeLog>
